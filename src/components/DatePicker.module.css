@@ -1,0 +1,164 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--color-text);
+  padding: 8px 18px 8px 0;
+  border: none;
+  border-bottom: 0.5px solid var(--color-border-light);
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none' stroke='%23828282' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'><path d='M1 1l4 4 4-4'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 2px center;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  display: block;
+}
+
+.trigger:focus,
+.trigger:hover {
+  border-bottom-color: var(--color-text);
+}
+
+.errorBorder {
+  border-bottom-color: #b3261e;
+}
+
+.placeholder {
+  color: var(--color-muted);
+}
+
+.value {
+  color: var(--color-text);
+}
+
+.popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 20;
+  background: #fff;
+  border: 0.5px solid var(--color-border-light);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* react-day-picker theme overrides */
+.popover :global(.rdp-root) {
+  --rdp-accent-color: var(--color-text);
+  --rdp-accent-background-color: var(--color-text);
+  --rdp-background-color: transparent;
+  --rdp-today-color: var(--color-text);
+  --rdp-day-height: 32px;
+  --rdp-day-width: 32px;
+  --rdp-day_button-height: 32px;
+  --rdp-day_button-width: 32px;
+  --rdp-day_button-border-radius: 50%;
+  --rdp-selected-border: none;
+  --rdp-outside-opacity: 0.35;
+  --rdp-disabled-opacity: 0.25;
+  --rdp-weekday-opacity: 1;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-text);
+  margin: 0;
+  position: relative;
+}
+
+.popover :global(.rdp-month_caption) {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text);
+  padding: 4px 0 12px;
+  justify-content: center;
+}
+
+.popover :global(.rdp-nav) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  pointer-events: none;
+}
+
+.popover :global(.rdp-button_previous),
+.popover :global(.rdp-button_next) {
+  pointer-events: auto;
+}
+
+.popover :global(.rdp-button_previous),
+.popover :global(.rdp-button_next) {
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+}
+
+.popover :global(.rdp-button_previous:hover),
+.popover :global(.rdp-button_next:hover) {
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.popover :global(.rdp-chevron) {
+  fill: currentColor;
+}
+
+.popover :global(.rdp-weekday) {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 0;
+}
+
+.popover :global(.rdp-day_button) {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--color-text);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.popover :global(.rdp-day_button:hover) {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.popover :global(.rdp-today .rdp-day_button) {
+  font-weight: 500;
+}
+
+.popover :global(.rdp-selected .rdp-day_button) {
+  background: var(--color-text);
+  color: #fff;
+  font-weight: 400;
+}
+
+.popover :global(.rdp-selected .rdp-day_button:hover) {
+  background: var(--color-text);
+}
