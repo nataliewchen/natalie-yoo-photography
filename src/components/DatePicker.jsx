@@ -27,6 +27,9 @@ export default function DatePicker({ value, onChange, placeholder = 'Select date
   const ref = useRef(null)
   const selected = fromISO(value)
 
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+
   useEffect(() => {
     if (!open) return
     const onDown = (e) => {
@@ -67,6 +70,7 @@ export default function DatePicker({ value, onChange, placeholder = 'Select date
                 setOpen(false)
               }
             }}
+            disabled={{ before: today }}
             showOutsideDays
           />
         </div>
