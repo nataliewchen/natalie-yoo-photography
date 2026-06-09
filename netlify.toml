@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# serve a real icon for /favicon.ico instead of letting the SPA catch-all
+# return index.html (must come before the /* rule — first match wins)
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/favicon-96.png"
+  status = 301
+
 # send all routes to the SPA so react-router handles client-side routing
 [[redirects]]
   from = "/*"
